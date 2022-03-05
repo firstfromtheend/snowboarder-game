@@ -18296,7 +18296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd6ab028f125055478d4357ff3c76c30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLoadNewScene: 1
+  timeToLoadNewScene: 10
   dawnFall: {fileID: 1439690711}
   crashSFX: {fileID: 8300000, guid: 03bbea52785a3f040a1f02bef9473b55, type: 3}
 --- !u!114 &1823716833
@@ -18461,7 +18461,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895902690}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.4, y: -0.1, z: -2.271957}
+  m_LocalPosition: {x: 171.37, y: -18.5, z: -2.271957}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1455634329}
