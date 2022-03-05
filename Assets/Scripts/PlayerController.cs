@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D playerRB2d;
     private SurfaceEffector2D surafaceEffector2d;
+    private bool canMove = true;
 
     [SerializeField] float playerTorqueAmount;
     [SerializeField] float playerTorqueAmountNegative;
@@ -22,8 +23,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RotatePlayer();
-        RespondToBoost();
+        if (canMove)
+        {
+            RotatePlayer();
+            RespondToBoost();
+        }
     }
 
     private void RespondToBoost()
@@ -48,5 +52,15 @@ public class PlayerController : MonoBehaviour
         {
             playerRB2d.AddTorque(-playerTorqueAmountNegative);
         }
+    }
+
+    public void DisableControls()
+    {
+        canMove = false;
+    }
+
+    public bool GetCanMoove()
+    {
+        return canMove;
     }
 }

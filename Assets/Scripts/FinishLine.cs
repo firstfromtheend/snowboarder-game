@@ -12,6 +12,7 @@ public class FinishLine : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             salute.Play();
+            GetComponent<AudioSource>().Play();
             StartCoroutine(ReloadScene());
         }
     }
