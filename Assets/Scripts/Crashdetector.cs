@@ -6,7 +6,7 @@ namespace Assets.Scripts
 {
     public class Crashdetector : MonoBehaviour
     {
-        PlayerController playerController;
+        Movement movement;
 
         [SerializeField] float timeToLoadNewScene = 1.5f;
         [SerializeField] ParticleSystem dawnFall;
@@ -14,19 +14,19 @@ namespace Assets.Scripts
 
         private void Awake()
         {
-            playerController = FindObjectOfType<PlayerController>();
+            movement = FindObjectOfType<Movement>();
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.CompareTag("Snow"))
             {
-                if (playerController.GetCanMoove())
+                if (movement.GetCanMoove())
                 {
                     dawnFall.Play();
                     GetComponent<AudioSource>().PlayOneShot(crashSFX);
                 }
-                playerController.DisableControls();
+                movement.DisableControls();
                 StartCoroutine(ReloadScene());
             }
         }
