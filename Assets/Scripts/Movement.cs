@@ -25,7 +25,13 @@ public class Movement : MonoBehaviour
 
         //Boost
         snowboarderControllGroup.Player.Boost.performed += ctx => AddBoost();
-        snowboarderControllGroup.Player.Boost.canceled += ctx => surfaceEffector2D.speed = normalSpeed;
+        snowboarderControllGroup.Player.Boost.canceled += ctx =>
+        {
+            if (surfaceEffector2D != null)
+            {
+                surfaceEffector2D.speed = normalSpeed;
+            }
+        };
 
         //Torque
         snowboarderControllGroup.Player.Torque.performed += ctx => PlayerTorque();
